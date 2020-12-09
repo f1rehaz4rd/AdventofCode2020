@@ -43,6 +43,9 @@ func ChallengeOne() {
 
 	dict := make(map[string][]string)
 
+	//
+	// Parse all the rules and make a dict
+	//
 	for scanner.Scan() {
 		line := strings.Split(scanner.Text(), BAGSPLIT)
 
@@ -67,6 +70,9 @@ func ChallengeOne() {
 		dict[line[0][:len(line[0])-1]] = tmp
 	}
 
+	//
+	// Go through the rules and check for the gold bag
+	//
 	ans := 0
 	for k, _ := range dict {
 		if k == MYBAG {
@@ -79,6 +85,6 @@ func ChallengeOne() {
 	fmt.Printf("ans: %d\n", ans)
 }
 
-func main() {
-	ChallengeOne()
-}
+// func main() {
+// 	ChallengeOne()
+// }
